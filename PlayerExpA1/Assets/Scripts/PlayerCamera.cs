@@ -24,10 +24,10 @@ public class PlayerCamera : MonoBehaviour
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
-        xRotation -= mouseX;
+        xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90, 90);
 
-        yRotation += mouseY;
+        yRotation += mouseX;
 
         // rotate cam and player
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);

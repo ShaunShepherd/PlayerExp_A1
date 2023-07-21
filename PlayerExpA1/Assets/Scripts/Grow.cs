@@ -6,6 +6,7 @@ public class Grow : MonoBehaviour, IInteractable
 {
     public void Interact()
     {
+        Debug.Log("GROW");
         transform.localScale = Vector3.one * 10;
     }
 }

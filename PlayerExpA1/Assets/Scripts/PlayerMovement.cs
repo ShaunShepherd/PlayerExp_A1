@@ -6,6 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
     void Update()
     {
-        
+        transform.position = new Vector3();
     }
 }

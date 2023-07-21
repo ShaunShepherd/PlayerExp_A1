@@ -18,8 +18,6 @@ public class PlayerInteract : MonoBehaviour
             if (interactable != null) 
             {
                 interactable.Interact();
-
-                Debug.Log("Hit Something!");
             }
         }
     }

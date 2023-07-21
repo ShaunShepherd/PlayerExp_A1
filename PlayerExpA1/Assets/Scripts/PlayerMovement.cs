@@ -1,13 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement Variables")]
+    [SerializeField] float moveSpeed;
+
+    [Header("References")]
+    [SerializeField] Transform orientation;
+
+    float horizontalInput;
+    float verticalInput;
+
+    Vector3 moveDirection;
+
+    Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+    }
+
     void Update()
     {
-        transform.position = new Vector3();
+        GetInput();
+    }
 
-        transform.position = new Vector3(2,0,1);
+    void GetInput()
+    {
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vetical");
+    }
+
+    void MovePlayer()
+    {
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+        rb.velocity = new Vector3(moveDirection.normalized);
     }
 }

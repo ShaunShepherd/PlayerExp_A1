@@ -7,6 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Variables")]
     [SerializeField] float moveSpeed;
+    [SerializeField] float playerHeight;
+    [SerializeField] float groundedAllowance;
+    [SerializeField] LayerMask groundLayer;
+    [SerializeField] float groundDrag;
+     
 
     [Header("References")]
     [SerializeField] Transform orientation;
@@ -32,6 +37,15 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         MovePlayer();
+
+        if (IsGrounded())
+        {
+            rb.drag = groundDrag;
+        }
+        else
+        {
+            rb.drag = 0;
+        }
     }
 
     void GetInput()
@@ -45,4 +59,12 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
         rb.AddForce(moveDirection.normalized * moveSpeed * 10, ForceMode.Force);
     }
+
+    bool IsGrounded()
+    {
+        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (playerHeight / 2) + groundedAllowance, groundLayer);
+
+        return isGrounded;
+    }
+
 }

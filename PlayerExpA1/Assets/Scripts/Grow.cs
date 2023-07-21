@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class Grow : MonoBehaviour, IInteractable
 {
+    [SerializeField] float growRate;
+    [SerializeField] float maxSize;
     public void Interact()
     {
-        Debug.Log("GROW");
-        transform.localScale = Vector3.one * 10;
+        if (transform.localScale.x < maxSize)
+        {
+            transform.localScale *= 1 + growRate / 100;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
 }

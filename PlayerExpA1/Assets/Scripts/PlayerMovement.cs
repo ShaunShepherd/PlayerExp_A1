@@ -32,11 +32,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         GetInput();
-    }
-
-    void FixedUpdate()
-    {
-        MovePlayer();
 
         if (IsGrounded())
         {
@@ -46,6 +41,13 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.drag = 0;
         }
+    }
+
+    void FixedUpdate()
+    {
+        MovePlayer();
+        SpeedClamp();
+
     }
 
     void GetInput()
@@ -67,4 +69,14 @@ public class PlayerMovement : MonoBehaviour
         return isGrounded;
     }
 
+    void SpeedClamp()
+    {
+        Vector3 flatVelocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
+        if (flatVelocity.magnitude > moveSpeed)
+        {
+            Vector3 clampedVelocity = flatVelocity.normalized * moveSpeed;
+            rb.velocity = new Vector3(clampedVelocity.x, rb.velocity.y, clampedVelocity.z);
+        }
+    }
 }

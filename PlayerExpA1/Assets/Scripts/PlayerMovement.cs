@@ -39,6 +39,5 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        rb.velocity = new Vector3(moveDirection.normalized);
     }
 }

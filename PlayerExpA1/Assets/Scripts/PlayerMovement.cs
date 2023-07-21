@@ -29,15 +29,20 @@ public class PlayerMovement : MonoBehaviour
         GetInput();
     }
 
+    void FixedUpdate()
+    {
+        MovePlayer();
+    }
+
     void GetInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vetical");
+        verticalInput = Input.GetAxisRaw("Vertical");
     }
 
     void MovePlayer()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-
+        rb.AddForce(moveDirection.normalized * moveSpeed * 10, ForceMode.Force);
     }
 }

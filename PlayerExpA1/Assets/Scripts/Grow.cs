@@ -6,6 +6,7 @@ public class Grow : MonoBehaviour, IInteractable
 {
     [SerializeField] float growRate;
     [SerializeField] float maxSize;
+    [SerializeField] ParticleSystem popParticles;
     public void Interact()
     {
         if (transform.localScale.x < maxSize)
@@ -14,6 +15,8 @@ public class Grow : MonoBehaviour, IInteractable
         }
         else
         {
+            var particles = Instantiate(popParticles, transform);
+            particles.transform.parent = null;
             Destroy(gameObject);
         }
 

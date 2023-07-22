@@ -50,7 +50,11 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 3709144190071270000}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   cacheTime: 638256192905323491
+=======
+  cacheTime: 638256176945117105
+>>>>>>> Stashed changes
 =======
   cacheTime: 638256176945117105
 >>>>>>> Stashed changes
@@ -71,7 +75,11 @@ MonoBehaviour:
   Name: Master
   StudioPath: bank:/Master
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   lastModified: 638256192905313496
+=======
+  lastModified: 638256176945117105
+>>>>>>> Stashed changes
 =======
   lastModified: 638256176945117105
 >>>>>>> Stashed changes
@@ -93,7 +101,11 @@ MonoBehaviour:
   Name: Master.strings
   StudioPath: bank:/Master.strings
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   lastModified: 638256192905323491
+=======
+  lastModified: 638256176945117105
+>>>>>>> Stashed changes
 =======
   lastModified: 638256176945117105
 >>>>>>> Stashed changes

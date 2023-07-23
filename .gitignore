@@ -10,14 +10,14 @@
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
 
-/Assets/Plugins/FMOD/.cache
-/Assets/Plugins/FMOD/.user
-/Assets/Plugins/FMOD/.unsaved
-/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
-/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
-/Assets/StreamingAssets//*.bank
-/Assets/StreamingAssets//*.bank.meta
-/Assets/Plugins/FMOD/Cache/
+Assets/Plugins/FMOD/.cache
+Assets/Plugins/FMOD/.user
+Assets/Plugins/FMOD/.unsaved
+Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
+Assets/StreamingAssets//*.bank
+Assets/StreamingAssets//*.bank.meta
+Assets/Plugins/FMOD/Cache/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data

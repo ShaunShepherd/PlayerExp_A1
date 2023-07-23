@@ -20,9 +20,9 @@
 # Ignore the Cache folder since it is updated locally.
 /[Aa]ssets/Plugins/FMOD/Cache/*
 
-/[Aa]ssets/Plugins/FMOD.cache
-/[Aa]ssets/Plugins/FMOD.user
-/[Aa]ssets/Plugins/FMOD.unsaved
+/[Aa]ssets/Plugins/FMOD/.cache
+/[Aa]ssets/Plugins/FMOD/.user
+/[Aa]ssets/Plugins/FMOD/.unsaved
 /[Aa]ssets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 /[Aa]ssets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
 /[Aa]ssets/StreamingAssets//*.bank

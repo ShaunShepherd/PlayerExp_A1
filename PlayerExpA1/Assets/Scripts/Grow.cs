@@ -7,10 +7,19 @@ public class Grow : MonoBehaviour, IInteractable
 {
     [SerializeField] float growRate;
     [SerializeField] float maxSize;
+    [SerializeField] float shrinkDelay;
     [SerializeField] ParticleSystem popParticles;
 
     bool growing;
     float previousScale;
+    float startingScale;
+    float shrinkDelayTimer;
+
+    void Start()
+    {
+        startingScale = transform.transform.localScale.x;
+    }
+
     public void Interact()
     {
         if (transform.localScale.x < maxSize)
@@ -28,19 +37,39 @@ public class Grow : MonoBehaviour, IInteractable
     void Update()
     {
 
-        if (transform.transform.localScale.x > previousScale) 
+
+        if (transform.localScale.x > previousScale) 
         { 
             growing = true;
 
             previousScale = transform.localScale.x;
+
+            shrinkDelayTimer = 0;
         }
         else
         {
             growing = false;
             previousScale = transform.localScale.x;
+
+            shrinkDelayTimer += Time.deltaTime;
+
+            if (shrinkDelayTimer > shrinkDelay)
+            {
+                Shrink();
+            }
         }
 
+        
+    }
 
-        Debug.Log("Growing is: " + growing);
+    void Shrink()
+    {
+        if (!growing)
+        {
+            if (transform.localScale.x > startingScale)
+            {
+                transform.localScale /= 1 + growRate / 1000;
+            }
+        }
     }
 }

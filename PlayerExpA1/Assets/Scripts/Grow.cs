@@ -9,7 +9,6 @@ public class Grow : MonoBehaviour, IInteractable
     [SerializeField] float maxSize;
     [SerializeField] float shrinkDelay;
     [SerializeField] ParticleSystem popParticles;
-    [SerializeField] Transform pufferfish;
 
     bool growing;
     float previousScale;
